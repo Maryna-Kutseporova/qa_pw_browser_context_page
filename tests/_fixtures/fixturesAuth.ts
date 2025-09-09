@@ -7,6 +7,7 @@ export const test = base.extend<{
   signUpPage;
   signInPage;
   homePage;
+  homePage2;
 }>({
   signUpPage: async ({ page }, use) => {
     const signUpPage = new SignUpPage(page);
@@ -22,5 +23,10 @@ export const test = base.extend<{
     const homePage = new HomePage(page);
 
     await use(homePage);
+  },
+  homePage2: async ({ page2 }, use) => {
+    const homePage2 = new HomePage(page2);
+
+    await use(homePage2);
   },
 });
